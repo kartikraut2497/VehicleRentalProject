@@ -60,9 +60,25 @@ class RentalServiceTest {
         int bookingPrice = rentalService.bookVehicle("B1", "CAR", 1, 2);
         int bookingPrice2 = rentalService.bookVehicle("B1", "CAR", 3, 6);
         int bookingPrice3 = rentalService.bookVehicle("B1", "CAR", 4, 5);
+
         Assert.assertEquals(bookingPrice, 500);
         Assert.assertEquals(bookingPrice2, 1500);
         Assert.assertEquals(bookingPrice3, 1000);
+    }
+
+    @Test
+    void bookVehicle2() {
+        boolean addVehicle = rentalService.addVehicle("B1", "CAR", "V1", 500);
+        boolean addVehicle2 = rentalService.addVehicle("B1", "CAR", "V2", 1000);
+        int bookingPrice = rentalService.bookVehicle("B1", "CAR", 1, 2);
+        int bookingPrice2 = rentalService.bookVehicle("B1", "CAR", 4, 5);
+        int bookingPrice3 = rentalService.bookVehicle("B1", "CAR", 3, 6);
+        int bookingPrice4 = rentalService.bookVehicle("B1", "CAR", 4, 6);
+
+        Assert.assertEquals(bookingPrice, 500);
+        Assert.assertEquals(bookingPrice2, 500);
+        Assert.assertEquals(bookingPrice3, 3000);
+        Assert.assertEquals(bookingPrice4, -1);
     }
 
     @Test
