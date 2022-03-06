@@ -27,32 +27,12 @@ public class Branch {
         return branchId;
     }
 
-    public void setBranchId(String branchId) {
-        this.branchId = branchId;
-    }
-
     public List<Vehicle> getVehiclesList() {
         return vehiclesList;
     }
 
-    public void setVehiclesList(List<Vehicle> vehiclesList) {
-        this.vehiclesList = vehiclesList;
-    }
-
     public Set<VehicleTypeEnum> getVehicleTypeEnumSet() {
         return vehicleTypeEnumSet;
-    }
-
-    public void setVehicleTypeEnumSet(Set<VehicleTypeEnum> vehicleTypeEnumSet) {
-        this.vehicleTypeEnumSet = vehicleTypeEnumSet;
-    }
-
-    public String getBranchName() {
-        return branchName;
-    }
-
-    public void setBranchName(String branchName) {
-        this.branchName = branchName;
     }
 
     public boolean addVehicle(String vehicleType, String vehicleId, int price){

@@ -12,6 +12,10 @@ public class BookingService {
     // This Map contains bookings of all vehicles with key as VehicleId
     Map<String, List<Booking>> currentBookingsMap = new HashMap<>();
 
+    public Map<String, List<Booking>> getCurrentBookingsMap() {
+        return currentBookingsMap;
+    }
+
     private boolean isBookingAvailable(String vehicleId, int start, int end){
         boolean isBookingAvailable = false;
 
@@ -24,9 +28,7 @@ public class BookingService {
             for(int j=0; j<currentBookings.size() && isBookingAvailable; j++){
                 int bookingStart = currentBookings.get(j).getStart();
                 int bookingEnd = currentBookings.get(j).getEnd();
-//                if((bookingStart <= start && bookingEnd > start) || (bookingStart <= end && bookingEnd >= end) || (start < bookingStart && end > bookingEnd)){
-//                    isBookingAvailable = false;
-//                }
+
                 if(!((start < bookingStart && end <= bookingStart) || (start >= bookingEnd && end > bookingEnd))){
                     isBookingAvailable = false;
                 }
@@ -66,35 +68,4 @@ public class BookingService {
 
         return totalPrice;
     }
-
-    public void displayAvailableVehicles(Branch branch, int start, int end){
-        List<Vehicle> vehicleList = branch.getVehiclesList();
-        List<String> availableVehicles = new ArrayList<>();
-
-        for(int i=0; i<vehicleList.size(); i++){
-            String vehicleId = vehicleList.get(i).getVehicleId();
-            if(isBookingAvailable(vehicleId, start, end)){
-                availableVehicles.add(vehicleId);
-//                System.out.println(vehicleId);
-            }
-        }
-
-        if(availableVehicles.size() == 0){
-            System.out.println("No Vehicles availabled between " + start + " " + end);
-        }
-        else{
-            System.out.println("Available Vehicles: " + availableVehicles);
-        }
-    }
-
-    public void displayBookings(){
-        for(Map.Entry<String, List<Booking>> bookingEntry : currentBookingsMap.entrySet()){
-            System.out.println("Vehicle Id: " + bookingEntry.getKey());
-            System.out.println("Bookings: ");
-            for(Booking booking: bookingEntry.getValue()){
-                System.out.println(booking.toString());
-            }
-        }
-    }
-
 }

@@ -10,41 +10,6 @@ import java.util.Scanner;
 
 public class Main {
 
-//    public static void main(String[] args) {
-//        List<String> vehicleTypes = List.of("CAR", "BUS");
-//
-//        RentalService rentalService = new RentalService();
-//        boolean branch1 = rentalService.addBranch("B1", vehicleTypes);
-//        System.out.println("Branch1 = " + branch1);
-//
-//        boolean add1 = rentalService.addVehicle("B1", "CAR", "V1", 5000);
-//        System.out.println("Add1 = " + add1);
-//        boolean add2 = rentalService.addVehicle("B1", "CAR", "V2", 1000);
-//        System.out.println("Add2 = " + add2);
-//        boolean add3 = rentalService.addVehicle("B1", "CAR", "V3", 2000);
-//        System.out.println("Add3 = " + add3);
-//        boolean add4 = rentalService.addVehicle("B1", "BUS", "V4", 500);
-//        System.out.println("Add4 = " + add4);
-//        boolean add5 = rentalService.addVehicle("B1", "VAN", "V5", 500);
-//        System.out.println("Add5 = " + add5);
-//        boolean add6 = rentalService.addVehicle("B2", "BUS", "V6", 500);
-//        System.out.println("Add6 = " + add6);
-//        boolean add7 = rentalService.addVehicle("B1", "CAR", "V4", 5500);
-//        System.out.println("Add7 = " + add7);
-//
-//        int booking1 = rentalService.bookVehicle("B1", "VAN", 1, 5);
-//        int booking2 = rentalService.bookVehicle("B1", "CAR",1, 3);
-//        int booking3 = rentalService.bookVehicle("B1", "CAR", 2, 4);
-//        int booking4 = rentalService.bookVehicle("B1", "CAR", 3, 4);
-//
-//        System.out.println("Booking1 = " + booking1);
-//        System.out.println("Booking2 = " + booking2);
-//        System.out.println("Booking3 = " + booking3);
-//        System.out.println("Booking4 = " + booking4);
-//
-//        rentalService.displayVehicles("B1", 1, 5);
-//    }
-
     public static void main(String[] args){
 
         RentalService rentalService = new RentalService();
