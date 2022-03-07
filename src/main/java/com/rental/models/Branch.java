@@ -35,7 +35,7 @@ public class Branch {
         return vehicleTypeEnumSet;
     }
 
-    public boolean addVehicle(String vehicleType, String vehicleId, int price){
+    public boolean addVehicle(String vehicleType, String vehicleId, double price){
         if(!this.vehicleTypeEnumSet.contains(VehicleTypeEnum.valueOf(vehicleType))){
             System.out.println("Vehicle Type - " + vehicleType + " is not allowed in current Branch.");
             return false;
@@ -49,7 +49,7 @@ public class Branch {
         Vehicle vehicle = vehicleFactory.getVehicle(vehicleType, vehicleId, price);
         this.vehiclesList.add(vehicle);
         this.vehicleIdsSet.add(vehicleId);
-        Collections.sort(this.vehiclesList, (v1, v2) -> v1.getPrice() - v2.getPrice());
+        Collections.sort(this.vehiclesList, Comparator.comparingDouble(Vehicle::getPrice));
         return true;
     }
 }

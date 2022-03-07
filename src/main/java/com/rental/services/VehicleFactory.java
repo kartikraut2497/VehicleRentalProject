@@ -4,7 +4,7 @@ import com.rental.models.*;
 
 public class VehicleFactory {
 
-    public Vehicle getVehicle(String vehicleType, String vehicleId, int price){
+    public Vehicle getVehicle(String vehicleType, String vehicleId, double price){
         VehicleTypeEnum vehicleTypeEnum = VehicleTypeEnum.valueOf(vehicleType);
         if(VehicleTypeEnum.BIKE.equals(vehicleTypeEnum)){
             return new Bike(vehicleId, price, VehicleTypeEnum.BIKE);

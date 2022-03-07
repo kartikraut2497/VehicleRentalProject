@@ -56,7 +56,7 @@ public class RentalService {
         return false;
     }
 
-    public boolean addVehicle(String branchId, String vehicleType, String vehicleId, int price){
+    public boolean addVehicle(String branchId, String vehicleType, String vehicleId, double price){
         Branch currentBranch = branchMap.getOrDefault(branchId, null);
         boolean isVehicleTypeValid = isVehicleTypeValid(vehicleType);
         if(null != currentBranch && isVehicleTypeValid){
@@ -65,7 +65,7 @@ public class RentalService {
         return false;
     }
 
-    public int bookVehicle(String branchId, String vehicleType, int start, int end){
+    public double bookVehicle(String branchId, String vehicleType, int start, int end){
         Branch currentBranch = branchMap.getOrDefault(branchId, null);
         boolean isVehicleTypeValid = isVehicleTypeValid(vehicleType);
         if(null != currentBranch && isVehicleTypeValid){

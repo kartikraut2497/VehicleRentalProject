@@ -3,10 +3,10 @@ package com.rental.models;
 public abstract class Vehicle {
 
     String vehicleId;
-    int price;
+    double price;
     VehicleTypeEnum vehicleTypeEnum;
 
-    public Vehicle(String vehicleId, int price, VehicleTypeEnum vehicleTypeEnum) {
+    public Vehicle(String vehicleId, double price, VehicleTypeEnum vehicleTypeEnum) {
         this.vehicleId = vehicleId;
         this.price = price;
         this.vehicleTypeEnum = vehicleTypeEnum;
@@ -22,7 +22,7 @@ public abstract class Vehicle {
         this.vehicleId = vehicleId;
     }
 
-    public int getPrice() {
+    public double getPrice() {
         return price;
     }
 

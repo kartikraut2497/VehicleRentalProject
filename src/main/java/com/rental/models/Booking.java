@@ -5,9 +5,10 @@ public class Booking {
     String vehicleId;
     String branchId;
     VehicleTypeEnum vehicleTypeEnum;
-    int start, end, totalPrice;
+    int start, end;
+    double totalPrice;
 
-    public Booking(String vehicleId, String branchId, VehicleTypeEnum vehicleTypeEnum, int start, int end, int totalPrice) {
+    public Booking(String vehicleId, String branchId, VehicleTypeEnum vehicleTypeEnum, int start, int end, double totalPrice) {
         this.vehicleId = vehicleId;
         this.branchId = branchId;
         this.vehicleTypeEnum = vehicleTypeEnum;
@@ -48,7 +49,7 @@ public class Booking {
         this.end = end;
     }
 
-    public int getTotalPrice() {
+    public double getTotalPrice() {
         return totalPrice;
     }
 

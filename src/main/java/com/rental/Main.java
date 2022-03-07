@@ -37,7 +37,7 @@ public class Main {
                     } else if (Constants.ADD_VEHICLE.equalsIgnoreCase(command)) {
                         String vehicleType = commandsArr[2];
                         String vehicleId = commandsArr[3];
-                        int price = Integer.valueOf(commandsArr[4]);
+                        double price = Double.valueOf(commandsArr[4]);
 
                         boolean addVehicle = rentalService.addVehicle(branchId, vehicleType, vehicleId, price);
                         System.out.println("ADD VEHICLE: " + addVehicle);
@@ -46,7 +46,7 @@ public class Main {
                         int start = Integer.valueOf(commandsArr[3]);
                         int end = Integer.valueOf(commandsArr[4]);
 
-                        int bookingPrice = rentalService.bookVehicle(branchId, vehicleType, start, end);
+                        double bookingPrice = rentalService.bookVehicle(branchId, vehicleType, start, end);
                         System.out.println("BOOK: " + bookingPrice);
                     } else if (Constants.DISPLAY_VEHICLES.equalsIgnoreCase(command)) {
                         int start = Integer.valueOf(commandsArr[2]);
